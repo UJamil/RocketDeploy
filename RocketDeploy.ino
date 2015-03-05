@@ -15,13 +15,16 @@
  
  */
 #include <Servo.h>
-Servo servo1;
+
+#define SERVO 5
+Servo servo;
+
 int state = 0;
 
 void setup() {
   Serial.begin(9600);
-  servo1.attach(5);
-  servo1.write(0);
+  servo.attach(SERVO);
+  servo.write(0);
   delay(500);
 }
 
@@ -32,8 +35,8 @@ void loop() {
   if (state == '1') { // if the state is 1 the parachute will deploy
     Serial.println("DEPLOYMENT PRIMED");
     delay(2000); // insert time in millis until deployment
-    servo1.write(120); // move servo to 120deg
+    servo.write(120); // move servo to 120deg
     delay(100);
-    servo1.detach(); // keep servo in position
+    servo.detach(); // keep servo in position
   }
 }
