@@ -11,7 +11,7 @@
  | |__| | |____| |    | |___| |__| | | |  | |  | | |____| |\  |  | |   
  |_____/|______|_|    |______\____/  |_|  |_|  |_|______|_| \_|  |_|   
  
- Developed by U. Jamil for Leslie's Engineering 2 Bottle Rockets 2014-15
+ Developed by U. Jamil and A. Chronister for Leslie's Engineering 2 Bottle Rockets 2014-15
  
  */
 #include <Servo.h>
