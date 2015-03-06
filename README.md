@@ -1,4 +1,4 @@
-<img src="">
+<img src="https://github.com/UJamil/RocketDeploy/blob/master/RocketServo_bb.png">
 <h1>RocketDeploy</h1>
 <p>Bluetooth Bottle Rocket Servo Deployment</p>
 <p>Developed by U. Jamil & A. Chronister @ Tesla STEM High School</p>
