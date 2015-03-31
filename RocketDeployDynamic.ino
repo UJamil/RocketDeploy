@@ -39,7 +39,13 @@ void loop()
     if (num == 1) {
       digitalWrite(LED, HIGH);
       Serial.println("DEPLOYMENT PRIMED");
-      Serial.println("Initiating Countdown");
+      Serial.println("Rocket Launch in T-minus")
+      for (int i = 5; i > 0; --i)
+      {
+        delay(1000);
+        Serial.println(i);
+      }
+      Serial.println("Deploying Parachute in...");
       long l = chuteDelay;
       for (l; l >= 1000; l -= 1000)
       {
@@ -49,6 +55,7 @@ void loop()
       delay(l);
       
       servo.write(ANGLE);
+      Serial.println("Chute deployed!");
       delay(HOLD/2);
       servo.detach();
       delay(HOLD/2);
