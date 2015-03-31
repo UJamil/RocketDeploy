@@ -11,20 +11,17 @@
  | |__| | |____| |    | |___| |__| | | |  | |  | | |____| |\  |  | |   
  |_____/|______|_|    |______\____/  |_|  |_|  |_|______|_| \_|  |_|   
  
- Developed by U. Jamil and A. Chronister for Leslie's Engineering 2 Bottle Rockets 2014-15
+ Developed by U. Jamil for Leslie's Engineering 2 Bottle Rockets 2014-15
  
  */
 #include <Servo.h>
-
-#define SERVO 5
-Servo servo;
-
+Servo servo1;
 int state = 0;
 
 void setup() {
   Serial.begin(9600);
-  servo.attach(SERVO);
-  servo.write(0);
+  servo1.attach(5);
+  servo1.write(0);
   delay(500);
 }
 
@@ -34,9 +31,24 @@ void loop() {
   }
   if (state == '1') { // if the state is 1 the parachute will deploy
     Serial.println("DEPLOYMENT PRIMED");
-    delay(2000); // insert time in millis until deployment
-    servo.write(120); // move servo to 120deg
+    delay(500);
+    Serial.println("Initiating Countdown");
+    delay(2000);
+    Serial.println("5");
+    delay(1000);
+    Serial.println("4");
+    delay(1000);
+    Serial.println("3");
+    delay(1000);
+    Serial.println("2");
+    delay(1000);
+    Serial.println("1");
+    delay(1000); // insert time in millis until deployment
+    Serial.println("FIRE!!!");
+    delay(4500);
+    servo1.write(120); // move servo to 120deg
     delay(100);
-    servo.detach(); // keep servo in position
+    servo1.detach(); // keep servo in position
+    return;
   }
 }
