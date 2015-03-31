@@ -38,8 +38,15 @@ void loop()
     int num = atoi(State);
     if (num == 1) {
       digitalWrite(LED, HIGH);
-      Serial.println("==> DEPLOYING PARACHUTE");
-      delay(chuteDelay);
+      Serial.println("DEPLOYMENT PRIMED");
+      Serial.println("Initiating Countdown");
+      long l = chuteDelay;
+      for (l; l >= 1000; l -= 1000)
+      {
+        delay(1000);
+        Serial.println(l / 1000);
+      }
+      delay(l);
       
       servo.write(ANGLE);
       delay(HOLD/2);
